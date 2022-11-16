@@ -1,0 +1,53 @@
+<html>
+  <head>
+<title>Anokha 2023</title>
+    <style>
+      body {
+        color: black;
+        background-color: FDF5DF;
+        }
+      header {
+        color:white;
+        background-color:A7BC5B;
+        text-align: center;
+      }
+      img {
+        height: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1><b>Anokha Tech Event 2023</b></h1>
+
+    </header>
+
+  <main>
+
+
+
+
+<form name="Event Registration">
+    <fieldset>
+        <legend>Event Registration</legend>
+<label for="Event name: ">Event name: </label><br>
+        <select id="Event name: "><br><br>
+            <option>-- Choose Event --</option>
+          </select><br>
+        <br>
+
+        <input type="button" value="Save"   onclick="SaveItem()">
+        <input type="button" value="Update" onclick="ModifyItem()">
+        <input type="button" value="Delete" onclick="RemoveItem()">
+    </fieldset>
+    <div id="items_table">
+        <h2>Selected Events</h2>
+        <table id="list"></table>
+        <label><input type="button" value="Clear" onclick="ClearAll()">
+        * Delete all items</label>
+    </div>
+</form>
+</main>
+</body>
+</html>
