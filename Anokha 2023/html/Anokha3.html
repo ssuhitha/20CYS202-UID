@@ -247,32 +247,7 @@ input:checked + .slider:before {
 </label><br><br> 
       <a class="w3-button w3-round-xxlarge w3-small w3-light-grey w3-margin-bottom" href="Anokha4.html">Register</a>
 
-function validatePhoneno() {
-      let phone = document.getElementById("phone").value;
-      if(!(phone.length==10))
-{
-window.alert("Enter valid phoneno");
-document.getElementById("phone").focus()
-}
-}
-function validatePassword() {
-	let pwd = document.getElementById("psw").value;
-                 var pass= "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$";
-if(!pwd.match(pass))
-{
-window.alert("Enter strong password");
-document.getElementById("psw").focus()
-}
-}
 
-function validateEmail() {
-     var maill= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    var mail = document.getElementById("email").value;
-    if (!mail.match(maill)) {
-        alert("Please enter a valid email address");
-        document.getElementById("email").focus()
-    }
-}
     
 
     <!-- Container (Contact Section) -->
