@@ -77,10 +77,10 @@
                 href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
                 <i class="fa fa-bars"></i>
             </a>
-<a class="w3-button w3-round-xxlarge w3-small w3-light-grey w3-margin-bottom" href="html/Anoka1.html">Home</a>
+<a class="w3-button w3-round-xxlarge w3-small w3-light-grey w3-margin-bottom" href="../index.html">Home</a>
 
             
-<a class="w3-button w3-round-xxlarge w3-small w3-light-grey w3-margin-bottom" href="html/Anokha2.html">Login</a>
+<a class="w3-button w3-round-xxlarge w3-small w3-light-grey w3-margin-bottom" href="Anokha2.html">Login</a>
 
 
   
@@ -285,7 +285,32 @@ input:checked + .slider:before {
             </div>
         </div>
     </div>
+function validatePhoneno() {
+      let phone = document.getElementById("phone").value;
+      if(!(phone.length==10))
+{
+window.alert("Enter valid phoneno");
+document.getElementById("phone").focus()
+}
+}
+function validatePassword() {
+	let pwd = document.getElementById("psw").value;
+                 var pass= "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$";
+if(!pwd.match(pass))
+{
+window.alert("Enter strong password");
+document.getElementById("psw").focus()
+}
+}
 
+function validateEmail() {
+     var maill= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var mail = document.getElementById("email").value;
+    if (!mail.match(maill)) {
+        alert("Please enter a valid email address");
+        document.getElementById("email").focus()
+    }
+}
     <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
     <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
         <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
@@ -300,10 +325,10 @@ input:checked + .slider:before {
            
            
     <p class="w3-small">Student of Amrita?</p>
-<a class="w3-button w3-round-xxlarge w3-small w3-light-grey w3-margin-bottom" href="html/Anoka1.html">Home</a>
+<a class="w3-button w3-round-xxlarge w3-small w3-light-grey w3-margin-bottom" href="../index.html">Home</a>
 
             
-<a class="w3-button w3-round-xxlarge w3-small w3-light-grey w3-margin-bottom" href="html/Anokha2.html">Login</a>
+<a class="w3-button w3-round-xxlarge w3-small w3-light-grey w3-margin-bottom" href="Anokha2.html">Login</a>
 
 
    <!-- Footer end. -->
