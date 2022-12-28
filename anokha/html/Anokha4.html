@@ -107,10 +107,12 @@
 <fieldset><center>
         <h3 class="w3-center">SELECT EVENTS TO REGISTER</h3>
 <form action="/register" method="post">
-  <label for="name" >Name:</label><br>
-  <input type="text" id="name" name="name" required><br>
-  <label for="email" >Email:</label><br>
-  <input type="text" id="email" name="email" required><br>
+ <label for="name">Name:</label><br>
+            	<input type="name" id="name" name="name" onchange="NameCheck()" placeholder="Name"><br>
+            	<label for="phonenumber">Phone Number </label><br>
+            	<input type="phonenumber" id="phonenumber" name="phonenumber" onchange="PhoneNumberCheck()" placeholder="Phonenumber"><br>
+            	<label for="email">Email </label><br>
+            	<input type="email" id="email" name="email" onchange="ValidateEmail()"  placeholder="Email"><br>
   <ul id="todo-list">
   <li>
     <input type="checkbox" id="task1">
@@ -215,6 +217,40 @@
                         <i class="fa fa-paper-plane"></i> SEND MESSAGE
                     </button>
                 </form>
+                <script>
+                    function ValidateEmail() {
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  var x = document.getElementById("email").value;
+  if (!x.match(mailformat)) {
+      alert("You have entered an invalid email address.Please enter a valid email address.");
+      document.getElementById("email").focus()
+  }
+}
+
+function PhoneNumberCheck() {
+
+var x = document.getElementById("phonenumber").value;
+console.log(x)
+if (!(x.length == 10)) {
+	alert("You have entered an invalid phone number. Please enter a valid phone number.")
+	document.getElementById("phonenumber").focus()
+}
+}
+
+function NameCheck() {
+    var x = document.getElementById("name").value;
+    var y = x.split("")
+    let sp = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'];
+    var arrLen = sp.length;
+    for (var i = 0; i < arrLen; i++) {
+        if (y.includes(sp[i])) {
+            alert("You have entered an invalid name.Special characters are present in the name.Enter a Valid Name")
+            document.getElementById("name").focus()
+            break
+        }
+     }
+}
+                </script>
             </div>
         </div>
     </div>
