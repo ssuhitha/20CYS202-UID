@@ -106,11 +106,10 @@
     <div class="w3-content w3-container w3-padding-64" id="about">
 <fieldset><center>
         <h3 class="w3-center">LOGIN TO REGISTER</h3>
-<form>
+<form  onsubmit ="return verifyPassword()">
     <label for="username">ID: </label><br>
     <input type="text" id="username" name="username"><br>
-    <label for="psw">Password</label>
-    <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+    <input type = "password" id = "pswd" value = "">
 <input type="checkbox" checked="checked"> Remember me  
             <br>
           <a class="w3-button w3-round-xxlarge w3-small w3-light-grey w3-margin-bottom" href="Anokha4.html">Register</a>
@@ -179,7 +178,26 @@
     </footer>
 
     
-
+<script>  
+function verifyPassword() {  
+  var pw = document.getElementById("pswd").value;  
+   
+  if(pw == "") {  
+     document.getElementById("message").innerHTML = "**Fill the password!";  
+     return false;  
+  }       
+  if(pw.length < 8) {  
+     document.getElementById("message").innerHTML = "** length must be atleast 8 characters";  
+     return false;  
+  }     
+  if(pw.length > 15) {  
+     document.getElementById("message").innerHTML = "** length must not exceed 15 characters";  
+     return false;  
+  } else {  
+     alert("Password is correct");  
+  }  
+}  
+</script>
 </body>
 
 </html>
