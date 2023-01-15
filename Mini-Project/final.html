@@ -335,7 +335,7 @@ function displayTodos() {
   if (incompleteTasks == 0) emoji = "😊";
   else if (incompleteTasks <= 2) emoji = "🙂";
   else if (incompleteTasks <= 4) emoji = "😶";
-  else if (incompleteTasks <= 8) emoji = "🥵";
+  else if (incompleteTasks <= 100) emoji = "🥵";
   taskCounter.innerHTML =
     incompleteTasks +
     " tasks remaining " +
