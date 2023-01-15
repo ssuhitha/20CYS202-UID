@@ -106,10 +106,11 @@
     <div class="w3-content w3-container w3-padding-64" id="about">
 <fieldset><center>
         <h3 class="w3-center">LOGIN TO REGISTER</h3>
-<form  onsubmit ="return verifyPassword()">
-    <label for="username">ID: </label><br>
-    <input type="text" id="username" name="username"><br>
-    <input type = "password" id = "pswd" value = "">
+<form>
+    <label for="name">ID: </label><br>
+    <input type="text" id="name" name="name" value="" onchange="nameValidation()"> <br>
+   PASSWORD:<br><input type = "password" id = "pswd" value = "" onchange="verifyPassword()"><br>
+   
 <input type="checkbox" checked="checked"> Remember me  
             <br>
           <a class="w3-button w3-round-xxlarge w3-small w3-light-grey w3-margin-bottom" href="Anokha4.html">Register</a>
@@ -183,20 +184,32 @@ function verifyPassword() {
   var pw = document.getElementById("pswd").value;  
    
   if(pw == "") {  
-     document.getElementById("message").innerHTML = "**Fill the password!";  
+     alert("Please enter correct password") 
      return false;  
   }       
   if(pw.length < 8) {  
-     document.getElementById("message").innerHTML = "** length must be atleast 8 characters";  
+     alert("length must be atleast 8 characters");  
      return false;  
   }     
   if(pw.length > 15) {  
-     document.getElementById("message").innerHTML = "** length must not exceed 15 characters";  
+     alert ("length must not exceed 15 characters");  
      return false;  
   } else {  
      alert("Password is correct");  
   }  
-}  
+}  </script>
+<script type="text/javascript">
+function nameValidation()
+{
+var a = document.getElementById("name").value;
+
+if(!isNaN(a))
+{
+alert("Please Enter Only Characters");
+document.getElementById("name").select();
+return false;
+}
+}
 </script>
 </body>
 
